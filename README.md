@@ -78,7 +78,11 @@ This will produce two binaries — `bf16` and `bf16_grayscale`. The former uses 
 ```
 
 ```bash
-./bf16_grayscale examples/badapple.b
+./bf16 examples/badapple.b -g
+```
+
+```bash
+./bf16 <filename> -r32
 ```
 
 ## Contributing
