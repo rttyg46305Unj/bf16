@@ -40,35 +40,7 @@
 			<Configuration>Release</Configuration>
 			<Platform>ARM64</Platform>
 		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug Grayscale|x64">
-			<Configuration>Debug Grayscale</Configuration>
-			<Platform>x64</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release Grayscale|x64">
-			<Configuration>Release Grayscale</Configuration>
-			<Platform>x64</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug Grayscale|Win32">
-			<Configuration>Debug Grayscale</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release Grayscale|Win32">
-			<Configuration>Release Grayscale</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug Grayscale|ARM64">
-			<Configuration>Debug Grayscale</Configuration>
-			<Platform>ARM64</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release Grayscale|ARM64">
-			<Configuration>Release Grayscale</Configuration>
-			<Platform>ARM64</Platform>
-		</ProjectConfiguration>
 	</ItemGroup>
-	<PropertyGroup>
-		<TargetName Condition="!$(Configuration.EndsWith('Grayscale'))">bf16</TargetName>
-		<TargetName Condition="$(Configuration.EndsWith('Grayscale'))">bf16_grayscale</TargetName>
-	</PropertyGroup>
 	<PropertyGroup Condition="$(Configuration.StartsWith('Debug'))" Label="Configuration">
 		<UseDebugLibraries>true</UseDebugLibraries>
 		<LinkIncremental>true</LinkIncremental>
