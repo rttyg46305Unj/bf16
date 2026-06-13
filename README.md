@@ -4,6 +4,20 @@ The first ever *visual* Brainfuck runtime built for running interactive games.
 ## Usage
 In order to use this runtime, you will have to compile it under a Linux distribution or Windows. 
 
+### Flags
+
+#### `-r32`
+
+Sets the resolution to 32 by 32.
+
+#### `-ra`
+
+Increases the resolution by 16 by 16.
+
+#### `-g`
+
+Makes it grayscale.
+
 ### Requirements
 
 #### Linux

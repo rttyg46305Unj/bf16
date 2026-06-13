@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 #include <SDL2/SDL.h>
 #include <math.h>
 
 // Size of the output window, NOT the size of the frambuffer
 #define WINDOW_SIZE 512
-#define PIXEL_SCALE (WINDOW_SIZE / 16)
 
 #define SAMPLE_RATE 48000
 #define AMPLITUDE   28000
@@ -120,12 +120,28 @@ int isBFChar (char a) {
     a == '?');
 }
 
+
 int main (int argc, char *argv[]) {
 
-  if (argc != 2) {
-    printf("Usage: %s <filename>\n", argv[0]);
+  if (argc < 2) {
+    printf("Usage: %s <filename> <flags>\n", argv[0]);
     return 1;
   }
+  
+  int i, GRAYSCALE = 0;
+  int SCREENSIZE = 16;
+  for (i=2;i<argc;i++) {
+    if (strcmp(argv[i], "-r32") == 0){
+	 SCREENSIZE = 32;
+    }
+    if (strcmp(argv[i], "-ra") == 0){
+	 SCREENSIZE += 16;
+    }
+    else if (strcmp(argv[i], "-g") == 0){
+         GRAYSCALE = 1;
+    }
+  }
+  int PIXEL_SCALE = (WINDOW_SIZE / SCREENSIZE);
 
   FILE *file = fopen(argv[1], "rb");
   if (!file) {
@@ -254,7 +270,9 @@ int main (int argc, char *argv[]) {
     }
 
     // Draw framebuffer as squares of RGB332 colors
-    for (int i = 0; i < 256; i++) {
+    for (int i = 0; i < SCREENSIZE*SCREENSIZE; i++) {
+      if(GRAYSCALE){SDL_SetRenderDrawColor(renderer, memory[i], memory[i], memory[i], 255);}
+      else {
       uint8_t pixel = memory[i];
       uint8_t r = (pixel & 0xE0) >> 5;  // Extract top 3 bits for red
       uint8_t g = (pixel & 0x1C) >> 2;  // Extract middle 3 bits for green
@@ -266,9 +284,10 @@ int main (int argc, char *argv[]) {
       b = (b * 255) / 3;
 
       SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+      }
       SDL_Rect rect = {
-        (i % 16) * PIXEL_SCALE,
-        (i / 16) * PIXEL_SCALE,
+        (i % SCREENSIZE) * PIXEL_SCALE,
+        (i / SCREENSIZE) * PIXEL_SCALE,
         PIXEL_SCALE,
         PIXEL_SCALE
       };
