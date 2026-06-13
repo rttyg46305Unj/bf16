@@ -127,7 +127,8 @@ int main (int argc, char *argv[]) {
     printf("Usage: %s <filename> <flags>\n", argv[0]);
     return 1;
   }
-  
+
+  // Makes and sets variables according to flags
   int i, GRAYSCALE = 0;
   int SCREENSIZE = 16;
   for (i=2;i<argc;i++) {
