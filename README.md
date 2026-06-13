@@ -6,17 +6,11 @@ In order to use this runtime, you will have to compile it under a Linux distribu
 
 ### Flags
 
-#### `-r32`
+`-r32` sets the resolution to 32 by 32.
 
-Sets the resolution to 32 by 32.
+`-ra` increases the resolution by 16 by 16.
 
-#### `-ra`
-
-Increases the resolution by 16 by 16.
-
-#### `-g`
-
-Makes it grayscale.
+`-g` makes it grayscale.
 
 ### Requirements
 
