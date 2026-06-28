@@ -69,10 +69,9 @@ In Visual Studio Developer Command Prompt, run the following commands:
 
 ```bash
 msbuild /p:Configuration="Release"
-msbuild /p:Configuration="Release Grayscale"
 ```
 
-This will produce two binaries — `bf16` and `bf16_grayscale`. The former uses an RGB332 palette, the latter renders in grayscale. Test with the programs under `examples/`. Note that `badapple.b` is best used with `bf16_grayscale`.
+This will produce one binary — `bf16`. The former uses an RGB332 palette, the latter renders in grayscale. Test with the programs under `examples/`. Note that `badapple.b` is best used with the `-g` flag.
 
 ### Example usage 
 ```bash
