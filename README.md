@@ -1,4 +1,4 @@
-# bbf16
+# modified bf16
 A modified versiom of the first ever *visual* Brainfuck runtime built for running interactive games.
 
 ## Usage
