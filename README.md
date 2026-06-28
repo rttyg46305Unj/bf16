@@ -10,7 +10,7 @@ In order to use this runtime, you will have to compile it under a Linux distribu
 
 `-ra` increases the resolution by 16 by 16.
 
-`-rc` sets a custom resolution.
+`-rc` sets a custom resolution. (implement soon)
 
 `-g` makes it grayscale.
 
