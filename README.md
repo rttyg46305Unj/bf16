@@ -1,5 +1,5 @@
-# bf16
-The first ever *visual* Brainfuck runtime built for running interactive games.
+# bbf16
+A modified versiom of the first ever *visual* Brainfuck runtime built for running interactive games.
 
 ## Usage
 In order to use this runtime, you will have to compile it under a Linux distribution or Windows. 
