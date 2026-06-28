@@ -50,7 +50,7 @@ Visual Studio 2022 or later with the C++ and C development tools installed and v
 Simply run the following commands inside a personal directory. 
 
 ```bash
-git clone https://github.com/p2r3/bf16
+git clone https://github.com/rttyg46305Unj/bf16
 ```
 
 ```bash
